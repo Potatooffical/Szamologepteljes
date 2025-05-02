@@ -90,7 +90,6 @@ namespace Szamologepteljes
         {
             tb_eredmeny.Text=$"Az √{a} és √{b}={Math.Round(Math.Sqrt(a),2)} és {Math.Round(Math.Sqrt(b), 2)}";
         }
-
         private void Hatvanykiszamol(double a, double b)
         {
             tb_eredmeny.Text = $"Az {a}^{b} = {Math.Round(Math.Pow(a, b), 3)}";
