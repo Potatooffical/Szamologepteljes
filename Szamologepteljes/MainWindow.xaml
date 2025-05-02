@@ -5,19 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Szamologepteljes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="400">
+        Title="Baldi Számológépe 100% works omg 😨😨" Height="300" Width="410">
     <Grid>
-        <TextBox x:Name="tbx_szambeir1" HorizontalAlignment="Left" Margin="70,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="110" Height="45" FontSize="30px" FontWeight="Bold" FontFamily="Arial" Foreground="Coral" BorderBrush="Coral" Padding="5px" TextChanged="tbx_szambeir1_TextChanged" />
-        <TextBox x:Name="tbx_szambeir2" HorizontalAlignment="Left" Margin="220,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="110" Height="45" FontSize="30px" FontWeight="Bold" FontFamily="Arial" Foreground="Coral" BorderBrush="Coral" Padding="5px" />
-        <Button x:Name="btn_1" Content="+"  HorizontalAlignment="Left" Margin="13,105,0,0" VerticalAlignment="Top" Height="34" Width="52" BorderThickness="1px"/>
-        <Button x:Name="btn_2" Content="-"  HorizontalAlignment="Left" Margin="75,105,0,0" VerticalAlignment="Top" Height="34" Width="52" BorderThickness="1px"/>
-        <Button x:Name="btn_3" Content="/"  HorizontalAlignment="Left" Margin="134,105,0,0" VerticalAlignment="Top" Height="34" Width="53" BorderThickness="1px"/>
-        <Button x:Name="btn_4" Content="*"  HorizontalAlignment="Left" Margin="195,105,0,0" VerticalAlignment="Top" Height="34" Width="52" BorderThickness="1px"/>
-        <Button x:Name="btn_5" Content="√"  HorizontalAlignment="Left" Margin="255,105,0,0" VerticalAlignment="Top" Height="34" Width="54" BorderThickness="1px" RenderTransformOrigin="-2.077,2.376"/>
-        <Button x:Name="btn_6" Content="^"  HorizontalAlignment="Left" Margin="320,105,0,0" VerticalAlignment="Top" Height="34" Width="54" BorderThickness="1px" RenderTransformOrigin="-2.077,2.376"/>
 
-        <Button x:Name="btn_8" Content="Clear"  HorizontalAlignment="Left" Margin="170,150,0,0" VerticalAlignment="Top" Height="34" Width="49" BorderThickness="1px" RenderTransformOrigin="-2.077,2.376" Click="btn_8_Click"/>
-        <TextBlock x:Name="tb_eredmeny" HorizontalAlignment="Left" Margin="20,204,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="46" Width="355" FontSize="25px" FontWeight="Bold" Padding="5px" TextAlignment="Center"/>
+        <Image HorizontalAlignment="Center" Height="288" VerticalAlignment="Center" Width="400" Source="/6488cc089a28bddb0e812262e2682199.jpg"/>
+        <Label Content="" HorizontalAlignment="Left" Margin="15,34,0,0" VerticalAlignment="Top" Height="235" Width="355" Background="White" Opacity=".3"/>
+        <TextBox x:Name="tbx_szambeir1" HorizontalAlignment="Left" Margin="55,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="110" Height="45" FontSize="30px" FontWeight="Bold" FontFamily="Arial" Foreground="Coral" BorderBrush="Coral" Padding="5px" TextChanged="tbx_szambeir_TextChanged"/>
+        <TextBox x:Name="tbx_szambeir2" HorizontalAlignment="Left" Margin="220,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="110" Height="45" FontSize="30px" FontWeight="Bold" FontFamily="Arial" Foreground="Coral" BorderBrush="Coral" Padding="5px" TextChanged="tbx_szambeir_TextChanged"/>
+        <Button x:Name="btn_8" Content="Clear"  HorizontalAlignment="Left" Margin="246,104,0,0" VerticalAlignment="Top" Height="34" Width="49" BorderThickness="1px" RenderTransformOrigin="-2.077,2.376" Click="btn_8_Click"/>
+        <TextBlock x:Name="tb_eredmeny" HorizontalAlignment="Left" Margin="15,149,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="70" Width="355" FontSize="25px" FontWeight="Bold" Padding="5px" TextAlignment="Center"/>
+        <RadioButton x:Name="rd_osszead" Content="+" HorizontalAlignment="Left" Margin="25,104,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="rd_kivon" Content="-" HorizontalAlignment="Left" Margin="26,124,0,0" VerticalAlignment="Top"/>
+        
+        <RadioButton x:Name="rd_eloszt" Content="/" HorizontalAlignment="Left" Margin="71,104,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="rd_szoroz" Content="*" HorizontalAlignment="Left" Margin="71,124,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="rd_gyokvon" Content="√" HorizontalAlignment="Left" Margin="111,104,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="rd_hatvanyoz" Content="^" HorizontalAlignment="Left" Margin="110,124,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

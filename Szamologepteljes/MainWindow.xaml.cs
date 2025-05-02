@@ -24,15 +24,18 @@ namespace Szamologepteljes
         {
             InitializeComponent();
         }
-
-        private void tbx_szambeir1_TextChanged(object sender, TextChangedEventArgs e)
+        private void tbx_szambeir_TextChanged(object sender, TextChangedEventArgs e)
         {
             try
             {
                 double szam1 = double.Parse(tbx_szambeir1.Text);
                 double szam2 = double.Parse(tbx_szambeir2.Text);
-                string muvelet = "+"; // Itt írd át a kívánt műveletre pl. "-", "*", "/"
-
+                if (string.IsNullOrWhiteSpace(tbx_szambeir1.Text) || string.IsNullOrWhiteSpace(tbx_szambeir2.Text))
+                {
+                    tb_eredmeny.Text = "Mindkét számot meg kell adni!";
+                    return;
+                }
+                string muvelet = Muveletjelkivalszt();
                 switch (muvelet)
                 {
                     case "+":
@@ -47,25 +50,51 @@ namespace Szamologepteljes
                     case "/":
                         Szamoszt(szam1, szam2);
                         break;
+                    case "√":
+                        gyokkivon(szam1, szam2);
+                        break;
+                    case "^":
+                        Hatvanykiszamol(szam1, szam2);
+                        break;
                     default:
                         tb_eredmeny.Text = "Ismeretlen művelet.";
                         break;
                 }
             }
-            catch (FormatException)
+            catch (DivideByZeroException ex)
             {
-                tb_eredmeny.Text = "Hibás számformátum!";
-            }
-            catch (DivideByZeroException)
-            {
-                tb_eredmeny.Text = "Nullával nem lehet osztani!";
+                tb_eredmeny.Text = ex.Message;
             }
             catch (Exception ex)
             {
                 tb_eredmeny.Text = $"Hiba történt: {ex.Message}";
             }
         }
+        private string Muveletjelkivalszt()
+        {
+            if (rd_osszead.IsChecked == true)
+                return "+";
+            if (rd_kivon.IsChecked == true)
+                return "-";
+            if (rd_szoroz.IsChecked == true)
+                return "*";
+            if (rd_eloszt.IsChecked == true)
+                return "/";
+            if (rd_gyokvon.IsChecked == true)
+                return "√";
+            if (rd_hatvanyoz.IsChecked == true)
+                return "^";
+            return "+";
+        }
+        private void gyokkivon(double a, double b)
+        {
+            tb_eredmeny.Text=$"Az √{a} és √{b}={Math.Round(Math.Sqrt(a),2)} és {Math.Round(Math.Sqrt(b), 2)}";
+        }
 
+        private void Hatvanykiszamol(double a, double b)
+        {
+            tb_eredmeny.Text = $"Az {a}^{b} = {Math.Round(Math.Pow(a, b), 3)}";
+        }
         private void Szamosszead(double a, double b)
         {
             tb_eredmeny.Text = $"Az {a} + {b} = {a + b}";
@@ -81,15 +110,20 @@ namespace Szamologepteljes
         private void Szamoszt(double a, double b)
         {
             if (b == 0)
-                throw new DivideByZeroException();
-            tb_eredmeny.Text = $"Az {a} / {b} = {a / b}";
+                throw new DivideByZeroException("Nullával nem lehet osztani!");
+            tb_eredmeny.Text = $"Az {a} / {b} = {Math.Round(a / b),3}";
         }
-
         private void btn_8_Click(object sender, RoutedEventArgs e)
         {
-            tb_eredmeny.Text="";
+            tb_eredmeny.Text = "";
             tbx_szambeir1.Clear();
             tbx_szambeir2.Clear();
+            rd_eloszt.IsChecked = false;
+            rd_gyokvon.IsChecked = false;
+            rd_hatvanyoz.IsChecked = false;
+            rd_kivon.IsChecked = false;
+            rd_osszead.IsChecked = false;
+            rd_szoroz.IsChecked = false;
         }
     }
 }
