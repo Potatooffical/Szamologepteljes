@@ -1,0 +1,23 @@
+﻿<Window x:Class="Szamologepteljes.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Szamologepteljes"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="400">
+    <Grid>
+        <TextBox x:Name="tbx_szambeir1" HorizontalAlignment="Left" Margin="70,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="110" Height="45" FontSize="30px" FontWeight="Bold" FontFamily="Arial" Foreground="Coral" BorderBrush="Coral" Padding="5px" TextChanged="tbx_szambeir1_TextChanged" />
+        <TextBox x:Name="tbx_szambeir2" HorizontalAlignment="Left" Margin="220,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="110" Height="45" FontSize="30px" FontWeight="Bold" FontFamily="Arial" Foreground="Coral" BorderBrush="Coral" Padding="5px" />
+        <Button x:Name="btn_1" Content="+"  HorizontalAlignment="Left" Margin="13,105,0,0" VerticalAlignment="Top" Height="34" Width="52" BorderThickness="1px"/>
+        <Button x:Name="btn_2" Content="-"  HorizontalAlignment="Left" Margin="75,105,0,0" VerticalAlignment="Top" Height="34" Width="52" BorderThickness="1px"/>
+        <Button x:Name="btn_3" Content="/"  HorizontalAlignment="Left" Margin="134,105,0,0" VerticalAlignment="Top" Height="34" Width="53" BorderThickness="1px"/>
+        <Button x:Name="btn_4" Content="*"  HorizontalAlignment="Left" Margin="195,105,0,0" VerticalAlignment="Top" Height="34" Width="52" BorderThickness="1px"/>
+        <Button x:Name="btn_5" Content="√"  HorizontalAlignment="Left" Margin="255,105,0,0" VerticalAlignment="Top" Height="34" Width="54" BorderThickness="1px" RenderTransformOrigin="-2.077,2.376"/>
+        <Button x:Name="btn_6" Content="^"  HorizontalAlignment="Left" Margin="320,105,0,0" VerticalAlignment="Top" Height="34" Width="54" BorderThickness="1px" RenderTransformOrigin="-2.077,2.376"/>
+
+        <Button x:Name="btn_8" Content="Clear"  HorizontalAlignment="Left" Margin="170,150,0,0" VerticalAlignment="Top" Height="34" Width="49" BorderThickness="1px" RenderTransformOrigin="-2.077,2.376" Click="btn_8_Click"/>
+        <TextBlock x:Name="tb_eredmeny" HorizontalAlignment="Left" Margin="20,204,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="46" Width="355" FontSize="25px" FontWeight="Bold" Padding="5px" TextAlignment="Center"/>
+
+    </Grid>
+</Window>
