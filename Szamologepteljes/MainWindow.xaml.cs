@@ -87,7 +87,9 @@ namespace Szamologepteljes
 
         private void btn_8_Click(object sender, RoutedEventArgs e)
         {
-            tb_eredmeny.Clear();
+            tb_eredmeny.Text="";
+            tbx_szambeir1.Clear();
+            tbx_szambeir2.Clear();
         }
     }
 }
