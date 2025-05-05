@@ -14,13 +14,12 @@
         <TextBox x:Name="tbx_szambeir2" HorizontalAlignment="Left" Margin="220,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="110" Height="45" FontSize="30px" FontWeight="Bold" FontFamily="Arial" Foreground="Coral" BorderBrush="Coral" Padding="5px" TextChanged="tbx_szambeir_TextChanged"/>
         <Button x:Name="btn_8" Content="Clear"  HorizontalAlignment="Left" Margin="246,104,0,0" VerticalAlignment="Top" Height="34" Width="49" BorderThickness="1px" RenderTransformOrigin="-2.077,2.376" Click="btn_8_Click"/>
         <TextBlock x:Name="tb_eredmeny" HorizontalAlignment="Left" Margin="15,149,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="70" Width="355" FontSize="25px" FontWeight="Bold" Padding="5px" TextAlignment="Center"/>
-        <RadioButton x:Name="rd_osszead" Content="+" HorizontalAlignment="Left" Margin="25,104,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="rd_kivon" Content="-" HorizontalAlignment="Left" Margin="26,124,0,0" VerticalAlignment="Top"/>
-        
-        <RadioButton x:Name="rd_eloszt" Content="/" HorizontalAlignment="Left" Margin="71,104,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="rd_szoroz" Content="*" HorizontalAlignment="Left" Margin="71,124,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="rd_gyokvon" Content="√" HorizontalAlignment="Left" Margin="111,104,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="rd_hatvanyoz" Content="^" HorizontalAlignment="Left" Margin="110,124,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="rd_osszead" Content="+" HorizontalAlignment="Left" Margin="25,104,0,0" VerticalAlignment="Top" FontSize="15px"/>
+        <RadioButton x:Name="rd_kivon" Content="-" HorizontalAlignment="Left" Margin="26,124,0,0" VerticalAlignment="Top" FontSize="15px"/>
+        <RadioButton x:Name="rd_eloszt" Content="/" HorizontalAlignment="Left" Margin="71,104,0,0" VerticalAlignment="Top" FontSize="15px"/>
+        <RadioButton x:Name="rd_szoroz" Content="*" HorizontalAlignment="Left" Margin="71,124,0,0" VerticalAlignment="Top" FontSize="15px"/>
+        <RadioButton x:Name="rd_gyokvon" Content="√" HorizontalAlignment="Left" Margin="111,104,0,0" VerticalAlignment="Top" Height="20" Width="34" FontSize="15px"/>
+        <RadioButton x:Name="rd_hatvanyoz" Content="^" HorizontalAlignment="Left" Margin="110,124,0,0" VerticalAlignment="Top" FontSize="15px"/>
 
     </Grid>
 </Window>
