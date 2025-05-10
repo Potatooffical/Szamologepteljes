@@ -10,9 +10,9 @@
 
         <Image HorizontalAlignment="Center" Height="288" VerticalAlignment="Center" Width="400" Source="/6488cc089a28bddb0e812262e2682199.jpg"/>
         <Label Content="" HorizontalAlignment="Left" Margin="15,34,0,0" VerticalAlignment="Top" Height="235" Width="355" Background="White" Opacity=".3"/>
-        <TextBox x:Name="tbx_szambeir1" HorizontalAlignment="Left" Margin="55,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="110" Height="45" FontSize="30px" FontWeight="Bold" FontFamily="Arial" Foreground="Coral" BorderBrush="Coral" Padding="5px" TextChanged="tbx_szambeir_TextChanged"/>
-        <TextBox x:Name="tbx_szambeir2" HorizontalAlignment="Left" Margin="220,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="110" Height="45" FontSize="30px" FontWeight="Bold" FontFamily="Arial" Foreground="Coral" BorderBrush="Coral" Padding="5px" TextChanged="tbx_szambeir_TextChanged"/>
-        <Button x:Name="btn_8" Content="Clear"  HorizontalAlignment="Left" Margin="246,104,0,0" VerticalAlignment="Top" Height="34" Width="49" BorderThickness="1px" RenderTransformOrigin="-2.077,2.376" Click="btn_8_Click"/>
+        <TextBox x:Name="tbx_szambeir1" HorizontalAlignment="Left" Margin="55,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="110" Height="45" FontSize="30px" FontWeight="Bold" FontFamily="Arial" Foreground="Coral" BorderBrush="Coral" Padding="5px" />
+        <TextBox x:Name="tbx_szambeir2" HorizontalAlignment="Left" Margin="220,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="110" Height="45" FontSize="30px" FontWeight="Bold" FontFamily="Arial" Foreground="Coral" BorderBrush="Coral" Padding="5px" />
+        <Button x:Name="btn_8" Content="Új Számolás"  HorizontalAlignment="Left" Margin="246,104,0,0" VerticalAlignment="Top" Height="34" Width="70" BorderThickness="1px" RenderTransformOrigin="-2.077,2.376" Click="btn_8_Click"/>
         <TextBlock x:Name="tb_eredmeny" HorizontalAlignment="Left" Margin="15,149,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="70" Width="355" FontSize="25px" FontWeight="Bold" Padding="5px" TextAlignment="Center"/>
         <RadioButton x:Name="rd_osszead" Content="+" HorizontalAlignment="Left" Margin="25,104,0,0" VerticalAlignment="Top" FontSize="15px"/>
         <RadioButton x:Name="rd_kivon" Content="-" HorizontalAlignment="Left" Margin="26,124,0,0" VerticalAlignment="Top" FontSize="15px"/>
@@ -20,6 +20,7 @@
         <RadioButton x:Name="rd_szoroz" Content="*" HorizontalAlignment="Left" Margin="71,124,0,0" VerticalAlignment="Top" FontSize="15px"/>
         <RadioButton x:Name="rd_gyokvon" Content="√" HorizontalAlignment="Left" Margin="111,104,0,0" VerticalAlignment="Top" Height="20" Width="34" FontSize="15px"/>
         <RadioButton x:Name="rd_hatvanyoz" Content="^" HorizontalAlignment="Left" Margin="110,124,0,0" VerticalAlignment="Top" FontSize="15px"/>
+        <Button x:Name="btn_kiszamol" Content="Kiszámol"  HorizontalAlignment="Center" Margin="0,104,0,0" VerticalAlignment="Top" Height="34" Width="55" BorderThickness="1px" RenderTransformOrigin="-2.077,2.376" Click="btn_kiszamol_Click" />
 
     </Grid>
 </Window>

@@ -24,12 +24,11 @@ namespace Szamologepteljes
         {
             InitializeComponent();
         }
-        private void tbx_szambeir_TextChanged(object sender, TextChangedEventArgs e)
+        private void btn_kiszamol_Click(object sender, RoutedEventArgs e)
         {
-            try
+
+            if (double.TryParse(tbx_szambeir1.Text, out double szam1) && (double.TryParse(tbx_szambeir2.Text, out double szam2)))
             {
-                double szam1 = double.Parse(tbx_szambeir1.Text);
-                double szam2 = double.Parse(tbx_szambeir2.Text);
                 if (string.IsNullOrWhiteSpace(tbx_szambeir1.Text) || string.IsNullOrWhiteSpace(tbx_szambeir2.Text))
                 {
                     tb_eredmeny.Text = "Mindkét számot meg kell adni!";
@@ -61,34 +60,34 @@ namespace Szamologepteljes
                         break;
                 }
             }
-            catch (DivideByZeroException ex)
+            else
             {
-                tb_eredmeny.Text = ex.Message;
+                MessageBox.Show("Kérem adjon meg egy műveletjelet", "Hiba", MessageBoxButton.OK, MessageBoxImage.Hand);
             }
-            catch (Exception ex)
-            {
-                tb_eredmeny.Text = $"Hiba történt: {ex.Message}";
-            }
+
         }
         private string Muveletjelkivalszt()
         {
             if (rd_osszead.IsChecked == true)
                 return "+";
-            if (rd_kivon.IsChecked == true)
+            else if (rd_kivon.IsChecked == true)
                 return "-";
-            if (rd_szoroz.IsChecked == true)
+            else if (rd_szoroz.IsChecked == true)
                 return "*";
-            if (rd_eloszt.IsChecked == true)
+            else if (rd_eloszt.IsChecked == true)
                 return "/";
-            if (rd_gyokvon.IsChecked == true)
+            else if (rd_gyokvon.IsChecked == true)
                 return "√";
-            if (rd_hatvanyoz.IsChecked == true)
+            else if (rd_hatvanyoz.IsChecked == true)
                 return "^";
-            return "+";
+            else
+                return "";
+            
+
         }
         private void gyokkivon(double a, double b)
         {
-            tb_eredmeny.Text=$"Az √{a} és √{b}={Math.Round(Math.Sqrt(a),2)} és {Math.Round(Math.Sqrt(b), 2)}";
+            tb_eredmeny.Text = $"Az √{a} és √{b}={Math.Round(Math.Sqrt(a), 2)} és {Math.Round(Math.Sqrt(b), 2)}";
         }
         private void Hatvanykiszamol(double a, double b)
         {
@@ -124,5 +123,7 @@ namespace Szamologepteljes
             rd_osszead.IsChecked = false;
             rd_szoroz.IsChecked = false;
         }
+
+
     }
 }
