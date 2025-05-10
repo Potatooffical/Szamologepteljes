@@ -26,45 +26,46 @@ namespace Szamologepteljes
         }
         private void btn_kiszamol_Click(object sender, RoutedEventArgs e)
         {
+            if (!string.IsNullOrWhiteSpace(tbx_szambeir1.Text) || !string.IsNullOrWhiteSpace(tbx_szambeir2.Text))
+            {            
+                    if (double.TryParse(tbx_szambeir1.Text, out double szam1) && (double.TryParse(tbx_szambeir2.Text, out double szam2)))
+                    {
 
-            if (double.TryParse(tbx_szambeir1.Text, out double szam1) && (double.TryParse(tbx_szambeir2.Text, out double szam2)))
-            {
-                if (string.IsNullOrWhiteSpace(tbx_szambeir1.Text) || string.IsNullOrWhiteSpace(tbx_szambeir2.Text))
-                {
-                    tb_eredmeny.Text = "Mindkét számot meg kell adni!";
-                    return;
+                        string muvelet = Muveletjelkivalszt();
+                        switch (muvelet)
+                        {
+                            case "+":
+                                Szamosszead(szam1, szam2);
+                                break;
+                            case "-":
+                                Szamkivon(szam1, szam2);
+                                break;
+                            case "*":
+                                Szamszoroz(szam1, szam2);
+                                break;
+                            case "/":
+                                Szamoszt(szam1, szam2);
+                                break;
+                            case "√":
+                                gyokkivon(szam1, szam2);
+                                break;
+                            case "^":
+                                Hatvanykiszamol(szam1, szam2);
+                                break;
+                            default:
+                                tb_eredmeny.Text = "Ismeretlen művelet.";
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Kérem adjon meg egy műveletjelet", "Hiba", MessageBoxButton.OK, MessageBoxImage.Hand);
+                    }
                 }
-                string muvelet = Muveletjelkivalszt();
-                switch (muvelet)
-                {
-                    case "+":
-                        Szamosszead(szam1, szam2);
-                        break;
-                    case "-":
-                        Szamkivon(szam1, szam2);
-                        break;
-                    case "*":
-                        Szamszoroz(szam1, szam2);
-                        break;
-                    case "/":
-                        Szamoszt(szam1, szam2);
-                        break;
-                    case "√":
-                        gyokkivon(szam1, szam2);
-                        break;
-                    case "^":
-                        Hatvanykiszamol(szam1, szam2);
-                        break;
-                    default:
-                        tb_eredmeny.Text = "Ismeretlen művelet.";
-                        break;
-                }
-            }
             else
             {
-                MessageBox.Show("Kérem adjon meg egy műveletjelet", "Hiba", MessageBoxButton.OK, MessageBoxImage.Hand);
+                MessageBox.Show("Mindkét számot meg kell adni!");
             }
-
         }
         private string Muveletjelkivalszt()
         {
@@ -82,7 +83,7 @@ namespace Szamologepteljes
                 return "^";
             else
                 return "";
-            
+
 
         }
         private void gyokkivon(double a, double b)
