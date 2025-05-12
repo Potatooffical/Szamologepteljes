@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -53,19 +54,16 @@ namespace Szamologepteljes
                                 Hatvanykiszamol(szam1, szam2);
                                 break;
                             default:
-                                tb_eredmeny.Text = "Ismeretlen művelet.";
+                                MessageBox.Show("Jelöljön be egy müveletjelt a műveletvégzéshez", "Hiba", MessageBoxButton.OK, MessageBoxImage.Hand);
                                 break;
                         }
                     }
                     else
-                    {
-                        MessageBox.Show("Kérem adjon meg egy műveletjelet", "Hiba", MessageBoxButton.OK, MessageBoxImage.Hand);
-                    }
+                        {
+                            MessageBox.Show("Mindkét számot meg kell adni!", "Hiba", MessageBoxButton.OK, MessageBoxImage.Hand);
+                        }
                 }
-            else
-            {
-                MessageBox.Show("Mindkét számot meg kell adni!");
-            }
+           
         }
         private string Muveletjelkivalszt()
         {
@@ -109,8 +107,11 @@ namespace Szamologepteljes
         private void Szamoszt(double a, double b)
         {
             if (b == 0)
-                throw new DivideByZeroException("Nullával nem lehet osztani!");
-            tb_eredmeny.Text = $"Az {a} / {b} = {Math.Round(a / b),3}";
+            {
+                MessageBox.Show("0-val nem osztunk", "Hiba", MessageBoxButton.OK, MessageBoxImage.Hand);
+            }
+            else
+                tb_eredmeny.Text = $"Az {a} / {b} = {Math.Round(a / b),3}";
         }
         private void btn_8_Click(object sender, RoutedEventArgs e)
         {
