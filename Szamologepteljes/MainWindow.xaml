@@ -16,7 +16,7 @@
         <Image Grid.RowSpan="2" Source="/6488cc089a28bddb0e812262e2682199.jpg"
                Stretch="Fill" Opacity="0.4"/>
 
-        <!-- Előtér tartalom -->
+       
         <Grid Grid.Row="1" Margin="10">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -30,7 +30,6 @@
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
 
-            <!-- TextBoxok -->
             <TextBox x:Name="tbx_szambeir1" Grid.Row="0" Grid.Column="0" Margin="5"
                      FontSize="24" FontWeight="Bold" FontFamily="Arial"
                      Foreground="Coral" BorderBrush="Coral" Padding="5"/>
@@ -38,7 +37,7 @@
                      FontSize="24" FontWeight="Bold" FontFamily="Arial"
                      Foreground="Coral" BorderBrush="Coral" Padding="5"/>
 
-            <!-- Műveletek -->
+           
             <WrapPanel Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="5">
                 <RadioButton x:Name="rd_osszead" Content="+" Margin="5"/>
                 <RadioButton x:Name="rd_kivon" Content="-" Margin="5"/>
@@ -48,13 +47,12 @@
                 <RadioButton x:Name="rd_hatvanyoz" Content="^" Margin="5"/>
             </WrapPanel>
 
-            <!-- Gombok -->
+         
             <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
                 <Button x:Name="btn_kiszamol" Content="Kiszámol" Width="100" Margin="10" Click="btn_kiszamol_Click"/>
                 <Button x:Name="btn_8" Content="Új Számolás" Width="100" Margin="10" Click="btn_8_Click"/>
             </StackPanel>
 
-            <!-- Eredmény -->
             <TextBlock x:Name="tb_eredmeny" Grid.Row="3" Grid.ColumnSpan="2" Grid.RowSpan="3"
                        FontSize="24" FontWeight="Bold" TextAlignment="Center" 
                        Margin="10" Padding="10" Background="White" Opacity="0.7"/>
