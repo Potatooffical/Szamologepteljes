@@ -5,22 +5,59 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Szamologepteljes"
         mc:Ignorable="d"
-        Title="Baldi Számológépe 100% works omg 😨😨" Height="300" Width="410">
+        Title="Baldi Számológépe 100% works omg 😨😨" Height="400" Width="300" MinWidth="400" MinHeight="300">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-        <Image HorizontalAlignment="Center" Height="288" VerticalAlignment="Center" Width="400" Source="/6488cc089a28bddb0e812262e2682199.jpg"/>
-        <Label Content="" HorizontalAlignment="Left" Margin="15,34,0,0" VerticalAlignment="Top" Height="235" Width="355" Background="White" Opacity=".3"/>
-        <TextBox x:Name="tbx_szambeir1" HorizontalAlignment="Left" Margin="55,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="110" Height="45" FontSize="30px" FontWeight="Bold" FontFamily="Arial" Foreground="Coral" BorderBrush="Coral" Padding="5px" />
-        <TextBox x:Name="tbx_szambeir2" HorizontalAlignment="Left" Margin="220,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="110" Height="45" FontSize="30px" FontWeight="Bold" FontFamily="Arial" Foreground="Coral" BorderBrush="Coral" Padding="5px" />
-        <Button x:Name="btn_8" Content="Új Számolás"  HorizontalAlignment="Left" Margin="246,104,0,0" VerticalAlignment="Top" Height="34" Width="70" BorderThickness="1px" RenderTransformOrigin="-2.077,2.376" Click="btn_8_Click"/>
-        <TextBlock x:Name="tb_eredmeny" HorizontalAlignment="Left" Margin="15,149,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="70" Width="355" FontSize="25px" FontWeight="Bold" Padding="5px" TextAlignment="Center"/>
-        <RadioButton x:Name="rd_osszead" Content="+" HorizontalAlignment="Left" Margin="25,104,0,0" VerticalAlignment="Top" FontSize="15px"/>
-        <RadioButton x:Name="rd_kivon" Content="-" HorizontalAlignment="Left" Margin="26,124,0,0" VerticalAlignment="Top" FontSize="15px"/>
-        <RadioButton x:Name="rd_eloszt" Content="/" HorizontalAlignment="Left" Margin="71,104,0,0" VerticalAlignment="Top" FontSize="15px"/>
-        <RadioButton x:Name="rd_szoroz" Content="*" HorizontalAlignment="Left" Margin="71,124,0,0" VerticalAlignment="Top" FontSize="15px"/>
-        <RadioButton x:Name="rd_gyokvon" Content="√" HorizontalAlignment="Left" Margin="111,104,0,0" VerticalAlignment="Top" Height="20" Width="34" FontSize="15px"/>
-        <RadioButton x:Name="rd_hatvanyoz" Content="^" HorizontalAlignment="Left" Margin="110,124,0,0" VerticalAlignment="Top" FontSize="15px"/>
-        <Button x:Name="btn_kiszamol" Content="Kiszámol"  HorizontalAlignment="Center" Margin="0,104,0,0" VerticalAlignment="Top" Height="34" Width="55" BorderThickness="1px" RenderTransformOrigin="-2.077,2.376" Click="btn_kiszamol_Click" />
+        <!-- Háttérkép -->
+        <Image Grid.RowSpan="2" Source="/6488cc089a28bddb0e812262e2682199.jpg"
+               Stretch="Fill" Opacity="0.4"/>
 
+        <!-- Előtér tartalom -->
+        <Grid Grid.Row="1" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- TextBoxok -->
+            <TextBox x:Name="tbx_szambeir1" Grid.Row="0" Grid.Column="0" Margin="5"
+                     FontSize="24" FontWeight="Bold" FontFamily="Arial"
+                     Foreground="Coral" BorderBrush="Coral" Padding="5"/>
+            <TextBox x:Name="tbx_szambeir2" Grid.Row="0" Grid.Column="1" Margin="5"
+                     FontSize="24" FontWeight="Bold" FontFamily="Arial"
+                     Foreground="Coral" BorderBrush="Coral" Padding="5"/>
+
+            <!-- Műveletek -->
+            <WrapPanel Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="5">
+                <RadioButton x:Name="rd_osszead" Content="+" Margin="5"/>
+                <RadioButton x:Name="rd_kivon" Content="-" Margin="5"/>
+                <RadioButton x:Name="rd_szoroz" Content="*" Margin="5"/>
+                <RadioButton x:Name="rd_eloszt" Content="/" Margin="5"/>
+                <RadioButton x:Name="rd_gyokvon" Content="√" Margin="5"/>
+                <RadioButton x:Name="rd_hatvanyoz" Content="^" Margin="5"/>
+            </WrapPanel>
+
+            <!-- Gombok -->
+            <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                <Button x:Name="btn_kiszamol" Content="Kiszámol" Width="100" Margin="10" Click="btn_kiszamol_Click"/>
+                <Button x:Name="btn_8" Content="Új Számolás" Width="100" Margin="10" Click="btn_8_Click"/>
+            </StackPanel>
+
+            <!-- Eredmény -->
+            <TextBlock x:Name="tb_eredmeny" Grid.Row="3" Grid.ColumnSpan="2" Grid.RowSpan="3"
+                       FontSize="24" FontWeight="Bold" TextAlignment="Center" 
+                       Margin="10" Padding="10" Background="White" Opacity="0.7"/>
+        </Grid>
     </Grid>
 </Window>
