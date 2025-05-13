@@ -28,43 +28,49 @@ namespace Szamologepteljes
         private void btn_kiszamol_Click(object sender, RoutedEventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(tbx_szambeir1.Text) || !string.IsNullOrWhiteSpace(tbx_szambeir2.Text))
-            {            
-                    if (double.TryParse(tbx_szambeir1.Text, out double szam1) && (double.TryParse(tbx_szambeir2.Text, out double szam2)))
-                    {
+            {
+                if (double.TryParse(tbx_szambeir1.Text, out double szam1) && (double.TryParse(tbx_szambeir2.Text, out double szam2)))
+                {
 
-                        string muvelet = Muveletjelkivalszt();
-                        switch (muvelet)
-                        {
-                            case "+":
-                                Szamosszead(szam1, szam2);
-                                break;
-                            case "-":
-                                Szamkivon(szam1, szam2);
-                                break;
-                            case "*":
-                                Szamszoroz(szam1, szam2);
-                                break;
-                            case "/":
-                                Szamoszt(szam1, szam2);
-                                break;
-                            case "√":
-                                gyokkivon(szam1, szam2);
-                                break;
-                            case "^":
-                                Hatvanykiszamol(szam1, szam2);
-                                break;
-                            default:
-                                MessageBox.Show("Jelöljön be egy müveletjelt a műveletvégzéshez", "Hiba", MessageBoxButton.OK, MessageBoxImage.Hand);
-                                break;
-                        }
+                    string muvelet = Muveletjelkivalszt();
+                    switch (muvelet)
+                    {
+                        case "+":
+                            Szamosszead(szam1, szam2);
+                            break;
+                        case "-":
+                            Szamkivon(szam1, szam2);
+                            break;
+                        case "*":
+                            Szamszoroz(szam1, szam2);
+                            break;
+                        case "/":
+                            Szamoszt(szam1, szam2);
+                            break;
+                        case "√":
+                            gyokkivon(szam1, szam2);
+                            break;
+                        case "^":
+                            Hatvanykiszamol(szam1, szam2);
+                            break;
+                        case "!":
+                            Faktorialiskiszamol(szam1, szam2);
+                            break;
+                        default:
+                            MessageBox.Show("Jelöljön be egy müveletjelt a műveletvégzéshez", "Hiba", MessageBoxButton.OK, MessageBoxImage.Hand);
+                            break;
                     }
-                    else
-                        {
-                            MessageBox.Show("Mindkét számot meg kell adni!", "Hiba", MessageBoxButton.OK, MessageBoxImage.Hand);
-                        }
                 }
-           
+                else
+                {
+                    MessageBox.Show("Mindkét számot meg kell adni vagy nem megfelelő karakter!", "Hiba", MessageBoxButton.OK, MessageBoxImage.Hand);
+                }
+            }
+
         }
+
+
+
         private string Muveletjelkivalszt()
         {
             if (rd_osszead.IsChecked == true)
@@ -79,10 +85,24 @@ namespace Szamologepteljes
                 return "√";
             else if (rd_hatvanyoz.IsChecked == true)
                 return "^";
+            else if (rd_faktorialis.IsChecked == true)
+                return "!";
             else
                 return "";
-
-
+        }
+        private void Faktorialiskiszamol(double a, double b)
+        {
+            double eredmeny1 = 1;
+            double eredmeny2 = 1;
+            for (int i = 1; i <= a; i++)
+            {
+                eredmeny1 *= i;
+            }
+            for (int i = 1; i <= a; i++)
+            {
+                eredmeny2 *= i;
+            }
+            tb_eredmeny.Text = $"Az {a}! és {b}! az = \n{eredmeny1} \n és \n{eredmeny2}";
         }
         private void gyokkivon(double a, double b)
         {
@@ -124,6 +144,7 @@ namespace Szamologepteljes
             rd_kivon.IsChecked = false;
             rd_osszead.IsChecked = false;
             rd_szoroz.IsChecked = false;
+            rd_faktorialis.IsChecked = false;
         }
 
 

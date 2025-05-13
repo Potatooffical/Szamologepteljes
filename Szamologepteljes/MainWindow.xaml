@@ -12,7 +12,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- Háttérkép -->
+        
         <Image Grid.RowSpan="2" Source="/6488cc089a28bddb0e812262e2682199.jpg"
                Stretch="Fill" Opacity="0.4"/>
 
@@ -45,6 +45,7 @@
                 <RadioButton x:Name="rd_eloszt" Content="/" Margin="5"/>
                 <RadioButton x:Name="rd_gyokvon" Content="√" Margin="5"/>
                 <RadioButton x:Name="rd_hatvanyoz" Content="^" Margin="5"/>
+                <RadioButton x:Name="rd_faktorialis" Content="!" Margin="5"/>
             </WrapPanel>
 
          
