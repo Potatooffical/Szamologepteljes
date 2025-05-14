@@ -77,10 +77,6 @@ namespace Szamologepteljes
                 MessageBox.Show("Nem Megfelelő karakter észlelve!", "Hiba", MessageBoxButton.OK, MessageBoxImage.Hand);
             }
         }   
-        
-
-
-
         private string Muveletjelkivalszt()
         {
             if (rd_osszead.IsChecked == true)
