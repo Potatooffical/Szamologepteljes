@@ -9,7 +9,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
         
@@ -20,7 +20,7 @@
         <Grid Grid.Row="1" Margin="10">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="50"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
@@ -56,7 +56,11 @@
 
             <TextBlock x:Name="tb_eredmeny" Grid.Row="3" Grid.ColumnSpan="2" Grid.RowSpan="3"
                        FontSize="24" FontWeight="Bold" TextAlignment="Center" 
-                       Margin="10" Padding="10" Background="White" Opacity="0.7"/>
+                       Margin="10" Padding="10" Background="White" Opacity="0.7" >
+                <TextBlock.Effect>
+                    <DropShadowEffect ShadowDepth="1"/>
+                </TextBlock.Effect>
+            </TextBlock>
         </Grid>
     </Grid>
 </Window>

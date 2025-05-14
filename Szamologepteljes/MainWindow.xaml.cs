@@ -1,7 +1,9 @@
 ﻿using System;
 using System.CodeDom;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -27,9 +29,13 @@ namespace Szamologepteljes
         }
         private void btn_kiszamol_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(tbx_szambeir1.Text) || !string.IsNullOrWhiteSpace(tbx_szambeir2.Text))
+            if (string.IsNullOrWhiteSpace(tbx_szambeir1.Text) || string.IsNullOrWhiteSpace(tbx_szambeir2.Text))
             {
-                if (double.TryParse(tbx_szambeir1.Text, out double szam1) && (double.TryParse(tbx_szambeir2.Text, out double szam2)))
+                MessageBox.Show("Üres Karakter észlelve!", "Hiba", MessageBoxButton.OK, MessageBoxImage.Hand);
+            }
+            else if (double.TryParse(tbx_szambeir1.Text, out double szam1) && (double.TryParse(tbx_szambeir2.Text, out double szam2)))
+            {
+                if (!string.IsNullOrWhiteSpace(tbx_szambeir1.Text) || !string.IsNullOrWhiteSpace(tbx_szambeir2.Text))
                 {
 
                     string muvelet = Muveletjelkivalszt();
@@ -63,11 +69,15 @@ namespace Szamologepteljes
                 }
                 else
                 {
-                    MessageBox.Show("Mindkét számot meg kell adni vagy nem megfelelő karakter!", "Hiba", MessageBoxButton.OK, MessageBoxImage.Hand);
-                }
+                    MessageBox.Show("Mindkét számot meg kell!", "Hiba", MessageBoxButton.OK, MessageBoxImage.Hand);    
+                }        
             }
-
-        }
+            else
+            {
+                MessageBox.Show("Nem Megfelelő karakter észlelve!", "Hiba", MessageBoxButton.OK, MessageBoxImage.Hand);
+            }
+        }   
+        
 
 
 
