@@ -134,7 +134,8 @@ namespace Szamologepteljes
         {
             if (b == 0)
             {
-                MessageBox.Show("0-val nem osztunk", "Hiba", MessageBoxButton.OK, MessageBoxImage.Hand);
+                MessageBox.Show("0-val nem osztunk te butuska", "Hiba", MessageBoxButton.OK, MessageBoxImage.Hand);
+                tb_eredmeny.Text = "";
             }
             else
                 tb_eredmeny.Text = $"Az {a} / {b} = {Math.Round(a / b),3}";
@@ -152,7 +153,5 @@ namespace Szamologepteljes
             rd_szoroz.IsChecked = false;
             rd_faktorialis.IsChecked = false;
         }
-
-
     }
 }

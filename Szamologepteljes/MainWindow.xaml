@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Szamologepteljes"
         mc:Ignorable="d"
-        Title="Baldi Számológépe 100% works omg 😨😨" Height="400" Width="300" MinWidth="400" MinHeight="300">
+        Title="Baldi Számológépe 100% works omg 😨😨" Height="400" Width="300" MinWidth="400" MinHeight="300" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
